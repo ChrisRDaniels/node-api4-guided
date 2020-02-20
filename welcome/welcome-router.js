@@ -1,11 +1,11 @@
-const express = require("express")
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
 router.get("/", (req, res) => {
-	res.status(200).json({
-		message: "welcome",
-	})
-})
+ res.status(200).json({
+  message: process.env.SECRET_MESSAGE || "welcome"
+ });
+});
 
-module.exports = router
+module.exports = router;
